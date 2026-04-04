@@ -59,6 +59,28 @@ nav.scrolled {
   transition: var(--transition);
 }
 
+.logo-text {
+  font-family: 'Alex Brush', cursive;
+  font-size: 2.4rem;
+  color: var(--primary);
+  margin-right: 12px;
+  line-height: 1;
+}
+
+.logo img {
+  height: 50px;
+  border-radius: 8px;
+  filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+}
+
+.logo:hover .logo-text {
+  transform: scale(1.02);
+}
+
+.logo:hover img {
+  transform: scale(1.05);
+}
+
 .logo img {
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
