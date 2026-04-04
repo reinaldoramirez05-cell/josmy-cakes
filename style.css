@@ -203,13 +203,12 @@ nav.scrolled {
   right: 5%;
   top: 50%;
   transform: translateY(-50%);
-  width: 55%;
-  height: 80%;
-  background: #fdfdfd url('/assets/menu-strawberry-v2.jpg') no-repeat center center/contain;
-  border-radius: 400px 400px 50px 50px;
+  width: 75%; /* Wider container to match photo aspect better */
+  height: 85%;
+  background: url('/assets/menu-strawberry-v2.jpg') no-repeat center center/cover;
+  border-radius: 500px 500px 100px 100px;
   box-shadow: var(--shadow);
   z-index: 1;
-  padding: 40px; /* Internal breathing room */
 }
 
 /* --- Sections --- */
@@ -255,10 +254,9 @@ section#menu {
 .menu-item img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: contain;
-  background: #ffffff; /* Matches the clean white box in the photos */
-  padding: 24px;
+  aspect-ratio: 4 / 5; /* Matches portrait photos better */
+  object-fit: cover;
+  object-position: center center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
