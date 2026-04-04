@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOSMY CAKES | Artisanal Magic Cakes</title>
+    <meta name="description" content="Authentic, bold, and delicious handcrafted cakes. Experience the magic of Josmy Cakes.">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <a href="#" class="logo">JOSMY CAKES</a>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#contact">Order Now</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="fade-up">Bolder Flavors,<br>Better <span style="color: var(--secondary)">Cakes</span></h1>
+            <p class="fade-up">Handcrafted with precision and passion. Discover a new standard of artisanal baking with JOSMY CAKES.</p>
+            <button class="btn fade-up" id="hero-order-btn">Order Now</button>
+        </div>
+        <div class="hero-img fade-up"></div>
+    </header>
+
+    <section id="menu">
+        <div class="section-title">
+            <h2>Our Sweet Treats</h2>
+            <div class="underline"></div>
+        </div>
+        
+        <div class="menu-grid">
+            <div class="menu-item fade-up">
+                <img src="/assets/menu-classic.png" alt="Classic Chocoflan Slice">
+                <div class="menu-info">
+                    <h3>Classic Chocoflan</h3>
+                    <p>The original magic cake. Perfect balance of moist chocolate cake and silky flan.</p>
+                    <div class="price">$25.00 (Large) / $15.00 (Small)</div>
+                    <button class="btn order-btn" style="padding: 0.5rem 1.5rem; margin-top: 1rem;">Order This</button>
+                </div>
+            </div>
+
+            <div class="menu-item fade-up">
+                <img src="/assets/menu-strawberry.png" alt="Strawberry Deluxe Chocoflan">
+                <div class="menu-info">
+                    <h3>Strawberry Deluxe</h3>
+                    <p>Topped with fresh, glazed strawberries and a hint of vanilla cream.</p>
+                    <div class="price">$32.00 (Large)</div>
+                    <button class="btn order-btn" style="padding: 0.5rem 1.5rem; margin-top: 1rem;">Order This</button>
+                </div>
+            </div>
+
+            <div class="menu-item fade-up">
+                <img src="/assets/menu-minis.png" alt="Mini Chocoflan Bites">
+                <div class="menu-info">
+                    <h3>Magic Minis</h3>
+                    <p>Party-sized individual portions. Ideal for gatherings and events.</p>
+                    <div class="price">$45.00 (Dozen)</div>
+                    <button class="btn order-btn" style="padding: 0.5rem 1.5rem; margin-top: 1rem;">Order This</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-img fade-up">
+            <img src="/assets/hero-chocoflan.png" alt="Baked fresh daily">
+        </div>
+        <div class="about-content fade-up">
+            <h2>Our Craft</h2>
+            <p>JOSMY CAKES is a masterclass in artisanal baking. We've taken the heart of traditional recipes and elevated them with bold flavors and modern techniques. Every creation is more than just a cake—it's a symphony of textures and a celebration of the perfect bite. Welcome to the new standard of sweetness.</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-info">
+                <span class="footer-logo">JOSMY CAKES</span>
+                <p>Artisanal Bakery | Sunnyvale, CA</p>
+                <p>Delivery & Pickup Available</p>
+            </div>
+            <div class="footer-times">
+                <h3>The Shop</h3>
+                <p>Mon - Fri: 11:00 - 11:00</p>
+                <p>Sat: 10:00 - 11:00</p>
+                <p>Sun: 11:00 - 8:00</p>
+            </div>
+            <div class="footer-socials">
+                <h3>Connect</h3>
+                <div class="socials">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="https://wa.me/1234567890">WhatsApp</a>
+                </div>
+                <button class="btn" id="open-modal">Start Your Order</button>
+            </div>
+        </div>
+        <p style="margin-top: 60px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 JOSMY CAKES. All rights reserved.</p>
+    </footer>
+
+    <!-- Order Modal -->
+    <div class="modal" id="order-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 style="margin-bottom: 20px; color: var(--primary)">Your Order</h2>
+            <form id="order-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label>Select Your Treat</label>
+                    <select required>
+                        <option value="">Choose one...</option>
+                        <option>Classic Chocoflan (Large)</option>
+                        <option>Classic Chocoflan (Small)</option>
+                        <option>Strawberry Deluxe</option>
+                        <option>Magic Minis (Dozen)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Delivery or Pickup?</label>
+                    <select required>
+                        <option>Delivery</option>
+                        <option>Local Pickup</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Notes (Optional)</label>
+                    <textarea placeholder="Allergies or special requests..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%">Send via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
