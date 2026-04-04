@@ -205,7 +205,7 @@ nav.scrolled {
   transform: translateY(-50%);
   width: 50%;
   height: 70%;
-  background: url('/assets/menu-strawberry-v2.jpg') no-repeat center center/cover;
+  background: url('/assets/menu-strawberry-v2.jpg') no-repeat center 40%/cover;
   border-radius: 300px 300px 100px 100px;
   box-shadow: var(--shadow);
   z-index: 1;
