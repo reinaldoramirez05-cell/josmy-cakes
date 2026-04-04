@@ -205,7 +205,7 @@ nav.scrolled {
   transform: translateY(-50%);
   width: 75%; /* Wider container to match photo aspect better */
   height: 85%;
-  background: url('/assets/menu-strawberry-v2.jpg') no-repeat center center/cover;
+  background: url('/assets/hero-final.jpg') no-repeat center center/cover;
   border-radius: 500px 500px 100px 100px;
   box-shadow: var(--shadow);
   z-index: 1;
