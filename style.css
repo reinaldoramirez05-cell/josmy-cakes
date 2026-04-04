@@ -422,6 +422,112 @@ section#menu {
   background: rgba(255, 255, 255, 0.08);
 }
 
+/* --- Testimonials --- */
+section.testimonials {
+  padding: 100px 10%;
+  background-color: var(--bg-dark);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.review-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.stars {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.review-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-dim);
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.review-author {
+  font-family: 'Alex Brush', cursive;
+  font-size: 2rem;
+  color: var(--white);
+}
+
+/* --- FAQ --- */
+section.faq {
+  padding: 100px 10%;
+  background-color: var(--bg-alt);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 5px;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding: 25px 0;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.faq-question:hover {
+  color: var(--primary);
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  color: var(--primary);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-answer p {
+  padding-bottom: 25px;
+  color: var(--text-dim);
+  font-size: 1.1rem;
+}
+
 /* --- Footer --- */
 footer {
   padding: 100px 10% 40px;
