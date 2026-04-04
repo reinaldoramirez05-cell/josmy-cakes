@@ -53,14 +53,15 @@ nav.scrolled {
 }
 
 .logo {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.8rem;
-  letter-spacing: 2px;
-  font-weight: 900;
-  color: var(--primary);
+  display: flex;
+  align-items: center;
   text-decoration: none;
   transition: var(--transition);
-  text-transform: uppercase;
+}
+
+.logo img {
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .logo:hover {
@@ -204,7 +205,9 @@ nav.scrolled {
   transform: translateY(-50%);
   width: 50%;
   height: 70%;
-  background: url('/assets/hero-chocoflan.png') no-repeat center center/contain;
+  background: url('/assets/menu-strawberry-v2.jpg') no-repeat center center/cover;
+  border-radius: 300px 300px 100px 100px;
+  box-shadow: var(--shadow);
   z-index: 1;
 }
 
@@ -403,11 +406,8 @@ footer {
 }
 
 .footer-logo {
-  font-family: 'DM Serif Display', serif;
-  font-size: 3rem;
-  color: var(--primary);
-  margin-bottom: 20px;
   display: block;
+  margin-bottom: 20px;
 }
 
 .footer-times h3, .footer-socials h3 {

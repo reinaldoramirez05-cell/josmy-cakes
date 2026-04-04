@@ -97,7 +97,7 @@ orderForm.addEventListener('submit', (e) => {
   const notes = orderForm.querySelector('textarea').value;
   
   // Create WhatsApp Message
-  const message = `Hola JOSMY CAKES! I would like to place an order:
+  const message = `Hola Jos-Mycakes! I would like to place an order:
 - Treat: ${treat}
 - Name: ${name}
 - Mode: ${type}
