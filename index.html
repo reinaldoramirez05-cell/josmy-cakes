@@ -28,7 +28,7 @@
 
     <header class="hero">
         <div class="hero-content">
-            <h1 class="fade-up">Bolder Flavors,<br>Better <span style="color: var(--secondary)">Cakes</span></h1>
+            <h1 class="fade-up">Bolder Flavors,<br>Better <span class="highlight-text">Cakes</span></h1>
             <p class="fade-up">Handcrafted with precision and passion. Discover a new standard of artisanal baking with Jos-Mycakes.</p>
             <button class="btn fade-up" id="hero-order-btn">Order Now</button>
         </div>
@@ -48,7 +48,7 @@
                     <h3>Classic Chocoflan</h3>
                     <p>The original magic cake. Perfect balance of moist chocolate cake and silky flan.</p>
                     <div class="price">$25.00 (Large) / $15.00 (Small)</div>
-                    <button class="btn order-btn" style="padding: 0.5rem 1.5rem; margin-top: 1rem;">Order This</button>
+                    <button class="btn order-btn">Order This</button>
                 </div>
             </div>
 
@@ -58,7 +58,7 @@
                     <h3>Strawberry Deluxe</h3>
                     <p>Topped with fresh, glazed strawberries and a hint of vanilla cream.</p>
                     <div class="price">$32.00 (Large)</div>
-                    <button class="btn order-btn" style="padding: 0.5rem 1.5rem; margin-top: 1rem;">Order This</button>
+                    <button class="btn order-btn">Order This</button>
                 </div>
             </div>
 
@@ -68,7 +68,7 @@
                     <h3>Magic Minis</h3>
                     <p>Party-sized individual portions. Ideal for gatherings and events.</p>
                     <div class="price">$45.00 (Dozen)</div>
-                    <button class="btn order-btn" style="padding: 0.5rem 1.5rem; margin-top: 1rem;">Order This</button>
+                    <button class="btn order-btn">Order This</button>
                 </div>
             </div>
         </div>
@@ -87,7 +87,7 @@
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-info">
-                <img src="/assets/logo-jos-mycakes.jpg" alt="Jos-Mycakes Logo" style="height: 100px; margin-bottom: 20px; border-radius: 10px;">
+                <img src="/assets/logo-jos-mycakes.jpg" alt="Jos-Mycakes Logo" class="footer-logo">
                 <p>Artisanal Bakery | Labelle, FL</p>
                 <p>Delivery & Pickup Available</p>
             </div>
@@ -107,14 +107,14 @@
                 <button class="btn" id="open-modal">Start Your Order</button>
             </div>
         </div>
-        <p style="margin-top: 60px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Jos-Mycakes. All rights reserved.</p>
+        <p class="footer-copyright">&copy; 2026 Jos-Mycakes. All rights reserved.</p>
     </footer>
 
     <!-- Order Modal -->
     <div class="modal" id="order-modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <h2 style="margin-bottom: 20px; color: var(--primary)">Your Order</h2>
+            <h2 class="modal-title">Your Order</h2>
             <form id="order-form">
                 <div class="form-group">
                     <label>Full Name</label>
@@ -122,7 +122,7 @@
                 </div>
                 <div class="form-group">
                     <label>Select Your Treat</label>
-                    <select required>
+                    <select required title="Select Your Treat">
                         <option value="">Choose one...</option>
                         <option>Classic Chocoflan (Large)</option>
                         <option>Classic Chocoflan (Small)</option>
@@ -132,7 +132,7 @@
                 </div>
                 <div class="form-group">
                     <label>Delivery or Pickup?</label>
-                    <select required>
+                    <select required title="Delivery or Pickup">
                         <option>Delivery</option>
                         <option>Local Pickup</option>
                     </select>
@@ -141,7 +141,7 @@
                     <label>Notes (Optional)</label>
                     <textarea placeholder="Allergies or special requests..."></textarea>
                 </div>
-                <button type="submit" class="btn" style="width: 100%">Send via WhatsApp</button>
+                <button type="submit" class="btn full-width-btn">Send via WhatsApp</button>
             </form>
         </div>
     </div>

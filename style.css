@@ -192,6 +192,10 @@ nav.scrolled {
   color: var(--primary);
 }
 
+.highlight-text {
+  color: var(--secondary);
+}
+
 .hero p {
   font-size: 1.4rem;
   margin-bottom: 2.5rem;
@@ -212,6 +216,11 @@ nav.scrolled {
   transition: var(--transition);
   border: none;
   cursor: pointer;
+}
+
+.order-btn {
+  padding: 0.5rem 1.5rem;
+  margin-top: 1rem;
 }
 
 .btn:hover {
@@ -431,7 +440,9 @@ footer {
 
 .footer-logo {
   display: block;
+  height: 100px;
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 .footer-times h3, .footer-socials h3 {
@@ -458,6 +469,21 @@ footer {
 
 .footer-socials .btn {
   margin-top: 30px;
+}
+
+.footer-copyright {
+  margin-top: 60px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.modal-title {
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.full-width-btn {
+  width: 100%;
 }
 
 /* --- Animations --- */
