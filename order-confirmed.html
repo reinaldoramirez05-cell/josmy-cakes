@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed | Jos-Mycakes</title>
+    <meta name="description" content="Your Jos-Mycakes order has been received. Something sweet is baking!">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;700&family=Alex+Brush&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="confirmation-page">
+        <div class="confirmation-card">
+            <div class="confetti-burst" id="confetti"></div>
+            <div class="confirmation-emoji">🎂</div>
+            <h1 class="confirmation-title">Something Sweet is Baking!</h1>
+            <p class="confirmation-message">Your order has been sent to our WhatsApp.<br>We'll confirm the details with you shortly!</p>
+            <div class="confirmation-divider"></div>
+            <p class="confirmation-sub">In the meantime, follow us for more sweetness:</p>
+            <div class="confirmation-socials">
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Facebook</a>
+                <a href="https://wa.me/17868741018" class="social-link">WhatsApp</a>
+            </div>
+            <a href="/" class="btn confirmation-btn">← Back to Jos-Mycakes</a>
+        </div>
+    </div>
+
+    <script>
+        // Generate confetti particles
+        const confetti = document.getElementById('confetti');
+        const colors = ['#D4AF37', '#8B1A2B', '#F5E6C8', '#FFFFFF', '#FFD700'];
+        
+        for (let i = 0; i < 60; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('confetti-piece');
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.animationDelay = Math.random() * 3 + 's';
+            particle.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            confetti.appendChild(particle);
+        }
+    </script>
+</body>
+</html>

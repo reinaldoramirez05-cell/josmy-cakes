@@ -111,14 +111,10 @@ Looking forward to it!`;
   // Open WhatsApp in new tab
   window.open(whatsappUrl, '_blank');
   
-  // Show branded confirmation toast
+  // Redirect to confirmation page
   closeModal();
   orderForm.reset();
-  const toast = document.getElementById('confirmation-toast');
-  toast.classList.add('active');
-  setTimeout(() => {
-    toast.classList.remove('active');
-  }, 4000);
+  window.location.href = '/order-confirmed.html';
 });
 
 // --- FAQ Accordion ---
