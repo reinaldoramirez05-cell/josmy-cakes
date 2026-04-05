@@ -106,7 +106,7 @@ orderForm.addEventListener('submit', (e) => {
 Looking forward to it!`;
 
   const encodedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/1234567890?text=${encodedMessage}`;
+  const whatsappUrl = `https://wa.me/17868741018?text=${encodedMessage}`;
   
   // Open WhatsApp in new tab
   window.open(whatsappUrl, '_blank');
