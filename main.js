@@ -101,7 +101,7 @@ orderForm.addEventListener('submit', async (e) => {
     const formData = new FormData(orderForm);
     
     // REPLACE THIS KEY with the one you get from web3forms.com
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    formData.append("access_key", "e406494a-eea1-46e8-b7a3-397e0f8d6150");
     formData.append("subject", "New Cake Order | Jos-Mycakes");
     formData.append("from_name", "Jos-Mycakes Website");
 
