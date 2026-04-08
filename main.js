@@ -104,25 +104,26 @@ orderForm.addEventListener('submit', async (e) => {
   try {
     const formData = new FormData(orderForm);
     // Google Apps Script requires a GET or a specific POST structure 
-    // This is the easiest way to send it to a Google Script
     const response = await fetch(SCRIPT_URL, {
       method: 'POST',
       body: formData
     });
 
-    // We don't necessarily need to wait for the response to be perfect 
-    // because Google Script won't allow CORS easily without complex setup.
-    // As long as the request is sent, the code will run on Google's end.
+    const result = await response.json();
+    let redirectUrl = 'order-confirmed.html';
+    
+    // If we got an order number, add it to the URL
+    if (result && result.orderNumber) {
+        redirectUrl += `?num=${result.orderNumber}`;
+    }
     
     // Redirect to confirmation page
     closeModal();
     orderForm.reset();
-    window.location.href = 'order-confirmed.html';
+    window.location.href = redirectUrl;
     
   } catch (error) {
     console.error('Error!', error.message);
-    // If there is an error, we still want to show the success page to the user 
-    // to avoid confusion, but we log the error.
     closeModal();
     orderForm.reset();
     window.location.href = 'order-confirmed.html';

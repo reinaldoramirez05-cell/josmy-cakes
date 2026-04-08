@@ -14,7 +14,10 @@
             <div class="confetti-burst" id="confetti"></div>
             <div class="confirmation-emoji">🎂</div>
             <h1 class="confirmation-title">Something Sweet is Baking!</h1>
-            <p class="confirmation-message">Your order has been sent to our WhatsApp.<br>We'll confirm the details with you shortly!</p>
+            <div class="order-number-display" id="order-num-box" style="display: none;">
+                Order #<span id="order-id">000</span>
+            </div>
+            <p class="confirmation-message">We have received your order!<br>We'll confirm the details with you shortly!</p>
             <div class="confirmation-divider"></div>
             <p class="confirmation-sub">In the meantime, follow us for more sweetness:</p>
             <div class="confirmation-socials">
@@ -27,6 +30,14 @@
     </div>
 
     <script>
+        // Check for order number in URL
+        const urlParams = new URL(window.location.href).searchParams;
+        const orderId = urlParams.get('num');
+        if (orderId) {
+            document.getElementById('order-id').innerText = orderId;
+            document.getElementById('order-num-box').style.display = 'block';
+        }
+
         // Generate confetti particles
         const confetti = document.getElementById('confetti');
         const colors = ['#D4AF37', '#8B1A2B', '#F5E6C8', '#FFFFFF', '#FFD700'];

@@ -658,6 +658,21 @@ footer {
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+.order-number-display {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+
 .confirmation-emoji {
   font-size: 5rem;
   margin-bottom: 20px;
