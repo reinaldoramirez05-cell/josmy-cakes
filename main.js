@@ -99,7 +99,7 @@ orderForm.addEventListener('submit', async (e) => {
   submitBtn.innerText = "Processing...";
 
   // The live Google Apps Script URL
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbZmdF55Wf7mfKDCBAlsVxl7kA9vBjhlLw5n_J3eWD3IAUDQsDaSJgXKq7QLrdVeo8tsw/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwsjYkCiuG66a2hFPkW2Iph-aoxoenQRjOiB-UioliDKWu90uq8XKpcUzfFiOJoPJPbjg/exec';
   
   try {
     const formData = new FormData(orderForm);
