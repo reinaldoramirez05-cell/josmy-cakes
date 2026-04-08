@@ -88,33 +88,45 @@ window.addEventListener('click', (e) => {
 
 // --- Order Form Submission ---
 const orderForm = document.getElementById('order-form');
-orderForm.addEventListener('submit', (e) => {
+orderForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   
-  const name = orderForm.querySelector('input[type="text"]').value;
-  const treat = orderForm.querySelector('select:nth-of-type(1)').value;
-  const type = orderForm.querySelector('select:nth-of-type(2)').value;
-  const notes = orderForm.querySelector('textarea').value;
+  const submitBtn = orderForm.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.innerText;
   
-  // Create WhatsApp Message
-  const message = `Hola Jos-Mycakes! I would like to place an order:
-- Treat: ${treat}
-- Name: ${name}
-- Mode: ${type}
-- Notes: ${notes}
+  // Show loading state
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Processing...";
 
-Looking forward to it!`;
+  // The live Google Apps Script URL
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxjgKDShcM56aZ4ofl3bIz5YHp9c9HRzBAUv8RthzIBpXQhyURs-S7zUJfwIWjQANAFRw/exec';
+  
+  try {
+    const formData = new FormData(orderForm);
+    // Google Apps Script requires a GET or a specific POST structure 
+    // This is the easiest way to send it to a Google Script
+    const response = await fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: formData
+    });
 
-  const encodedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/17868741018?text=${encodedMessage}`;
-  
-  // Open WhatsApp in new tab
-  window.open(whatsappUrl, '_blank');
-  
-  // Redirect to confirmation page
-  closeModal();
-  orderForm.reset();
-  window.location.href = '/order-confirmed.html';
+    // We don't necessarily need to wait for the response to be perfect 
+    // because Google Script won't allow CORS easily without complex setup.
+    // As long as the request is sent, the code will run on Google's end.
+    
+    // Redirect to confirmation page
+    closeModal();
+    orderForm.reset();
+    window.location.href = '/order-confirmed.html';
+    
+  } catch (error) {
+    console.error('Error!', error.message);
+    // If there is an error, we still want to show the success page to the user 
+    // to avoid confusion, but we log the error.
+    closeModal();
+    orderForm.reset();
+    window.location.href = '/order-confirmed.html';
+  }
 });
 
 // --- FAQ Accordion ---

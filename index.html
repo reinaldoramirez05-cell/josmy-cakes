@@ -175,11 +175,11 @@
             <form id="order-form">
                 <div class="form-group">
                     <label>Full Name</label>
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" name="name" placeholder="Your Name" required>
                 </div>
                 <div class="form-group">
                     <label>Select Your Treat</label>
-                    <select required title="Select Your Treat">
+                    <select name="treat" required title="Select Your Treat">
                         <option value="">Choose one...</option>
                         <option>Classic Chocoflan (Large)</option>
                         <option>Classic Chocoflan (Small)</option>
@@ -189,16 +189,16 @@
                 </div>
                 <div class="form-group">
                     <label>Delivery or Pickup?</label>
-                    <select required title="Delivery or Pickup">
+                    <select name="mode" required title="Delivery or Pickup">
                         <option>Delivery</option>
                         <option>Local Pickup</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Notes (Optional)</label>
-                    <textarea placeholder="Allergies or special requests..."></textarea>
+                    <textarea name="notes" placeholder="Allergies or special requests..."></textarea>
                 </div>
-                <button type="submit" class="btn full-width-btn">Send via WhatsApp</button>
+                <button type="submit" class="btn full-width-btn">Submit Order</button>
             </form>
         </div>
     </div>
