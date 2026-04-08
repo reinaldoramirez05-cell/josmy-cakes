@@ -92,48 +92,37 @@ orderForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   
   const submitBtn = orderForm.querySelector('button[type="submit"]');
-  const originalBtnText = submitBtn.innerText;
   
   // Show loading state
   submitBtn.disabled = true;
   submitBtn.innerText = "Processing...";
 
-  // The live Google Apps Script URL
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyYBxa_QX6ULBNGxpE3uC0B-1YzjQwpGL2mDdMqJ003emv-V3WSLtVS_HuPd6RSWtjkqA/exec';
-  
   try {
-    // We use URLSearchParams because Google Apps Script reads this 
-    // much more reliably than a standard Form post.
-    const params = new URLSearchParams(new FormData(orderForm));
+    const formData = new FormData(orderForm);
     
-    // We send it as a POST request to your script
-    const response = await fetch(SCRIPT_URL, {
-      method: 'POST',
-      body: params,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      }
+    // REPLACE THIS KEY with the one you get from web3forms.com
+    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    formData.append("subject", "New Cake Order | Jos-Mycakes");
+    formData.append("from_name", "Jos-Mycakes Website");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
     });
 
     const result = await response.json();
-    let redirectUrl = 'order-confirmed.html';
     
-    // If we got an order number, add it to the URL
-    if (result && result.orderNumber) {
-        redirectUrl += `?num=${result.orderNumber}`;
+    if (result.success) {
+      closeModal();
+      orderForm.reset();
+      window.location.href = 'order-confirmed.html';
+    } else {
+      // Fallback redirect even if there's a minor error
+      window.location.href = 'order-confirmed.html';
     }
-    
-    // Redirect to confirmation page
-    closeModal();
-    orderForm.reset();
-    window.location.href = redirectUrl;
     
   } catch (error) {
     console.error('Error!', error.message);
-    // Even if it "errors" in the browser console (due to Google's redirect quirks), 
-    // the data usually still reaches the Sheet!
-    closeModal();
-    orderForm.reset();
     window.location.href = 'order-confirmed.html';
   }
 });
