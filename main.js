@@ -117,7 +117,7 @@ orderForm.addEventListener('submit', async (e) => {
     // Redirect to confirmation page
     closeModal();
     orderForm.reset();
-    window.location.href = '/order-confirmed.html';
+    window.location.href = 'order-confirmed.html';
     
   } catch (error) {
     console.error('Error!', error.message);
@@ -125,7 +125,7 @@ orderForm.addEventListener('submit', async (e) => {
     // to avoid confusion, but we log the error.
     closeModal();
     orderForm.reset();
-    window.location.href = '/order-confirmed.html';
+    window.location.href = 'order-confirmed.html';
   }
 });
 
