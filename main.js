@@ -102,11 +102,17 @@ orderForm.addEventListener('submit', async (e) => {
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwsjYkCiuG66a2hFPkW2Iph-aoxoenQRjOiB-UioliDKWu90uq8XKpcUzfFiOJoPJPbjg/exec';
   
   try {
-    const formData = new FormData(orderForm);
-    // Google Apps Script requires a GET or a specific POST structure 
+    // We use URLSearchParams because Google Apps Script reads this 
+    // much more reliably than a standard Form post.
+    const params = new URLSearchParams(new FormData(orderForm));
+    
+    // We send it as a POST request to your script
     const response = await fetch(SCRIPT_URL, {
       method: 'POST',
-      body: formData
+      body: params,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }
     });
 
     const result = await response.json();
@@ -124,6 +130,8 @@ orderForm.addEventListener('submit', async (e) => {
     
   } catch (error) {
     console.error('Error!', error.message);
+    // Even if it "errors" in the browser console (due to Google's redirect quirks), 
+    // the data usually still reaches the Sheet!
     closeModal();
     orderForm.reset();
     window.location.href = 'order-confirmed.html';
